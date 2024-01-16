@@ -13,15 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Configure Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@v5
         with:
           go-version: "1.20"
 
       - name: Go Format
-        run: gofmt -s -w . && git diff --exit-code
+        run: gofmt -s -w -l $(find . -type f -name '*.go'| grep -v "/vendor/") && git diff --exit-code
 
       - name: Go Vet
         run: go vet ./...
