@@ -35,6 +35,7 @@ func NewR2(
 		context.TODO(),
 		config.WithEndpointResolverWithOptions(r2Resolver),
 		config.WithCredentialsProvider(credentials.NewStaticCredentialsProvider(accessKeyID, accessKeySecret, "")),
+		config.WithRegion("auto"),
 	)
 	if err != nil {
 		return nil, fmt.Errorf("creating config: %w", err)

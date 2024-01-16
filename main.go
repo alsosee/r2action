@@ -46,7 +46,7 @@ func run() error {
 
 	err = performOperation(r2, c.Operation, c.Key, c.File)
 	if err != nil {
-		return fmt.Errorf("failed to render template: %v", err)
+		return fmt.Errorf("failed to perform operation: %v", err)
 	}
 
 	return nil
