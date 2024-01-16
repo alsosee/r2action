@@ -32,4 +32,4 @@ inputs:
 
 runs:
   using: docker
-  image: 'docker://alsosee/r2action:latest'
+  image: docker://ghcr.io/alsosee/r2action:latest
