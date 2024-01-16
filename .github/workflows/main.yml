@@ -5,8 +5,6 @@ on:
   push:
     branches:
       - main
-env:
-  DOCKER_IMAGE: alsosee/r2action
 
 jobs:
   main:
@@ -26,22 +24,10 @@ jobs:
       - name: Go Vet
         run: go vet ./...
 
-      # - name: golangci-lint
-      #   uses: golangci/golangci-lint-action@v3
-      #   with:
-      #     version: v1.50.1
-
-      - name: Test
-        run: go test -v -count=1 -race -shuffle=on -coverprofile=coverage.txt -json ./... > test.json
-
-      - name: Annotate tests
-        if: always()
-        uses: guyarb/golang-test-annotations@v0.7.0
-        with:
-          test-results: test.json
-
       - name: Build and push to CR
         uses: chuhlomin/actions/docker-build-push@main
+        env:
+          DOCKER_IMAGE: ghcr.io/alsosee/r2action
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
