@@ -25,6 +25,7 @@ jobs:
         run: go vet ./...
 
       - name: Build and push to CR
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: chuhlomin/actions/docker-build-push@main
         env:
           DOCKER_IMAGE: ghcr.io/alsosee/r2action
