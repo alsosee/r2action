@@ -1,0 +1,35 @@
+name: R2 Action
+description: Perform an operation with objects in Cloudflare R2 bucket
+
+author: Konstantin Chukhlomin <mail@chuhlomin.com>
+
+branding:
+  icon: database
+  color: purple
+
+inputs:
+  account_id:
+    description: Cloudflare Account ID
+    required: true
+  access_key_id:
+    description: Cloudflare R2 Access Key ID
+    required: true
+  access_key_secret:
+    description: Cloudflare R2 Access Key Secret
+    required: true
+  bucket:
+    description: Cloudflare R2 Bucket name
+    required: true
+  operation:
+    description: "Operation to perform: get, put, delete"
+    required: true
+  key:
+    description: Object key
+    required: true
+  file:
+    description: Local file path, not required for delete operation
+    required: false
+
+runs:
+  using: docker
+  image: 'docker://alsosee/r2action:latest'
