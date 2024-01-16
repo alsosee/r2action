@@ -11,10 +11,10 @@ import (
 // type vars map[string]interface{}
 
 type conf struct {
-	AccountID       string `env:"INPUT_R2_ACCOUNT_ID" long:"account-id" description:"R2 account id"`
-	AccessKeyID     string `env:"INPUT_R2_ACCESS_KEY_ID" long:"access-key-id" description:"R2 access key id"`
-	AccessKeySecret string `env:"INPUT_R2_ACCESS_KEY_SECRET" long:"access-key-secret" description:"R2 access key secret"`
-	Bucket          string `env:"INPUT_R2_BUCKET" long:"bucket" description:"R2 bucket"`
+	AccountID       string `env:"INPUT_ACCOUNT_ID" long:"account-id" description:"R2 account id"`
+	AccessKeyID     string `env:"INPUT_ACCESS_KEY_ID" long:"access-key-id" description:"R2 access key id"`
+	AccessKeySecret string `env:"INPUT_ACCESS_KEY_SECRET" long:"access-key-secret" description:"R2 access key secret"`
+	Bucket          string `env:"INPUT_BUCKET" long:"bucket" description:"R2 bucket"`
 	Operation       string `env:"INPUT_OPERATION" long:"operation" description:"Operation to perform"`
 	Key             string `env:"INPUT_KEY" long:"key" description:"Object key"`
 	File            string `env:"INPUT_FILE" long:"file" description:"Local file path"`
