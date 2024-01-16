@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 
 	"github.com/caarlos0/env/v9"
 )
@@ -77,6 +78,10 @@ func get(r2 *R2, key, file string) error {
 	body, err := r2.Get(key)
 	if err != nil {
 		return fmt.Errorf("downloading object: %w", err)
+	}
+
+	if err := os.MkdirAll(filepath.Dir(file), 0755); err != nil {
+		return fmt.Errorf("creating directory: %w", err)
 	}
 
 	if err := os.WriteFile(file, body, 0644); err != nil {
