@@ -33,5 +33,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.PKG_TOKEN }}
           image_name: ${{ env.DOCKER_IMAGE }}
-          tags: ${{ env.DOCKER_IMAGE }}:${{ github.sha }}
+          tags: |
+            ${{ env.DOCKER_IMAGE }}:latest
+            ${{ env.DOCKER_IMAGE }}:${{ github.sha }}
           platforms: linux/amd64
