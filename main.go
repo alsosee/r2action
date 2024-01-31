@@ -1,4 +1,4 @@
-// GitHub Action that does something
+// GitHub Action that performs an operation on R2 Cloud storage object.
 package main
 
 import (
