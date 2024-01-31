@@ -1,4 +1,4 @@
-module github.com/chuhlomin/action
+module github.com/alsosee/r2action
 
 go 1.21
 
