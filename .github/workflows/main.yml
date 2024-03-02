@@ -37,4 +37,4 @@ jobs:
           tags: |
             ${{ env.DOCKER_IMAGE }}:latest
             ${{ env.DOCKER_IMAGE }}:${{ github.sha }}
-          platforms: linux/amd64
+          platforms: linux/amd64,linux/arm64/v8
